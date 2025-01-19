@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Quranic Verses">
+    <title>Quranic Verses</title>
+    <style>
+        /* General Page Style */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #FFD700;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .verse-section {
+            background-color: #222;
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .verse-title {
+            font-size: 1.5em;
+            color: #FFD700;
+        }
+
+        .verse-text {
+            font-size: 1.2em;
+            color: #fff;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .verse-text:hover {
+            color: #FFD700;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .verse-title {
+                font-size: 1.2em;
+            }
+
+            .verse-text {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Interactive Quranic Verses</h1>
+    </header>
+
+    <div class="content">
+        <!-- Verse 1 -->
+        <div class="verse-section">
+            <div class="verse-title">Surah Al-Baqarah (2:117)</div>
+            <div class="verse-text" onclick="showTranslation(1)">
+                بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ ۚ وَإِذَا قَضَىٰ أَمْرًا فَإِنَّمَا يَقُولُ لَهُ كُنْ فَيَكُونُ
+            </div>
+            <div id="translation-1" class="verse-translation"></div>
+        </div>
+
+        <!-- Verse 2 -->
+        <div class="verse-section">
+            <div class="verse-title">Surah Al-An'am (6:101)</div>
+            <div class="verse-text" onclick="showTranslation(2)">
+                بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ ۚ أَنَّىٰ يَكُونُ لَهُ وَلَدٌ وَلَمْ تَكُنْ لَهُ صَاحِبَةٌ ۖ وَخَلَقَ كُلَّ شَيْءٍ فَقَدَّرَهُ تَقْدِيرًا
+            </div>
+            <div id="translation-2" class="verse-translation"></div>
+        </div>
+
+        <!-- Verse 3 -->
+        <div class="verse-section">
+            <div class="verse-title">Surah Yunus (10:4-35)</div>
+            <div class="verse-text" onclick="showTranslation(3)">
+                إِنَّ رَبَّكُمْ اللَّهُ الَّذِي خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ فِي سِتَّةِ أَيَّامٍ ثُمَّ اسْتَوَىٰ عَلَى الْعَرْشِ ۚ يُدَبِّرُ الْأَمْرَ ۚ مَا مِن شَفِيعٍ إِلَّا مِن بَعْدِ إِذْنِهِ ۚ ذَٰلِكُمُ اللَّهُ رَبُّكُمْ فَاعْبُدُوهُ ۚ أَفَلَا تَذَكَّرُونَ
+            </div>
+            <div id="translation-3" class="verse-translation"></div>
+        </div>
+
+        <!-- Continue for other verses (each with the same structure as above) -->
+        <!-- Add more verses as required using the same pattern. -->
+
+    </div>
+
+    <script>
+        // Example translation data for interactivity
+        const translations = {
+            1: "The Originator of the heavens and the earth. When He decrees a matter, He only says to it, ‘Be,’ and it is.",
+            2: "Creator of the heavens and the earth. How can He have a child when He has no consort, and He created all things? And He has determined them with precise determination.",
+            3: "Indeed, your ally is none other than Allah, His Messenger, and those who have believed—those who establish prayer and give zakah while bowing [in worship].",
+        };
+
+        // Function to show translation on click
+        function showTranslation(verseNumber) {
+            const translationElement = document.getElementById(`translation-${verseNumber}`);
+            translationElement.innerHTML = translations[verseNumber] || "Translation not available.";
+            translationElement.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
